@@ -9,21 +9,23 @@ def shell_sort(arr):
     :return: arr
     """
     n = len(arr)
-    gap = n // 2
+    gap = n // 2    # 分隔距离，也是组数
     while gap > 0:
-        y_index = gap
-        while y_index < n:
-            y = arr[y_index]
-            x_index = y_index - gap
-            while x_index >= 0 and arr[x_index] > y:
-                arr[x_index + gap] = arr[x_index]
-                x_index -= gap
-            arr[x_index + gap] = y
-            y_index += 1
+        index = gap
+        while index < n:
+            element = arr[index]
+            pos = index
+            while pos-gap >= 0 and arr[pos-gap] > element:
+                arr[pos] = arr[pos-gap]
+                pos -= gap
+            arr[pos] = element
+            index += 1
+            print(arr)
         gap = gap // 2
     return arr
 
 
 if __name__ == "__main__":
     test_arr = [8, 5, 10, 12, 7, 6, 15, 9, 11, 3]
-    print(shell_sort(test_arr))
+    print(test_arr)
+    shell_sort(test_arr)
