@@ -24,7 +24,7 @@ def quick_sort_recur(arr, first, last):
 def partition(arr, first, last):
     wall = first
     for pos in range(first, last):
-        if arr[pos] < arr[last]:
+        if arr[pos] < arr[last]:    # 以最后一个元素为基准
             arr[wall], arr[pos] = arr[pos], arr[wall]
             wall += 1
 
