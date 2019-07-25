@@ -16,7 +16,8 @@ def max_heap_sort(arr):
 
 def max_heapify(arr, end):
     last_parent = (end - 1) // 2
-    for current_parent in range(last_parent, -1, -1):   # 从当前父节点遍历到根节点
+    for parent in range(last_parent, -1, -1):   # 从当前父节点遍历到根节点
+        current_parent = parent
         while current_parent <= last_parent:
             child = current_parent * 2 + 1
             if child + 1 <= end and arr[child] < arr[child + 1]:    # 找到较大的孩子节点
