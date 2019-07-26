@@ -8,7 +8,7 @@ def sortArrayByParityII(arr):
     :return: arr
     """
     even_pos, odd_pos, n = 0, 1, len(arr)
-    while even_pos < n:
+    while odd_pos < n:
         if arr[odd_pos] % 2 != 0:
             odd_pos += 2
         else:
