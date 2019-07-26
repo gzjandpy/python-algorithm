@@ -12,7 +12,7 @@ def insertion_sort(arr):
         element = arr[i]
         pos = i
 
-        while pos > 0 and arr[pos - 1] > element:
+        while pos >= 1 and arr[pos - 1] > element:
             arr[pos] = arr[pos - 1]
             pos -= 1
         arr[pos] = element
